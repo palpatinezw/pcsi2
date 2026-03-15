@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
     res.send("Hello World")
 })
 
-app.get('/get_math_colles', (req, res) => {
+app.get('/get_docs', (req, res) => {
     getDocs().then((result) => {
         res.send({success:true, body:result})
     })

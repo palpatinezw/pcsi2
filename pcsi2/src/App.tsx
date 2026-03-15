@@ -13,7 +13,7 @@ function App() {
     useEffect(() => {
         const apiurl = import.meta.env.VITE_API_URL
         console.log(apiurl)
-        fetch(apiurl + "get_math_colles").then((res) => {
+        fetch(apiurl + "get_docs").then((res) => {
             console.log(res)
             return res.json()
         }).then((res) => {
