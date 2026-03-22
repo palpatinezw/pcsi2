@@ -48,3 +48,14 @@ export const getDocs = ():Promise<ColleDoc[]> => {
     ]
     return Promise.all(extractors).then((res) => res.flat())
 }
+
+export const getImptDocs = ():Promise<(ColleDoc|undefined)[]> => {
+    const extractors = [
+        getDoc(links.mathCollesLink, "math", "colle"),
+        getDoc(links.chemCollesLink, "chem", "colle"),
+        getDoc(links.mathOthersLink, "math", "other"),
+    ]
+    return Promise.all(extractors).then((res) => {
+        return [ res[0]?.length ? res[0][res[0].length-2]:undefined, res[1]?.length ? res[1][res[1].length-1]:undefined, res[2]?.length ? res[2][res[2].length-3]:undefined ]
+    })
+}
