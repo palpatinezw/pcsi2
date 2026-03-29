@@ -135,23 +135,22 @@ function App() {
             </div>}
 
             {/* 🔍 FILTER BAR */}
+            <div className="flex mb-4 h-12">
+                {/* Search */}
+                <input
+                    type="text"
+                    placeholder="Recherche..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="border rounded-lg px-3 py-2 flex-1 xl:flex-2"
+                />
+            </div>
             <div className="flex flex-col gap-2 mb-6 lg:flex-row">
-                <div className="flex flex-1 flex-col sm:flex-row gap-2">
-                    {/* Search */}
-                    <input
-                        type="text"
-                        placeholder="Recherche..."
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        className="border rounded-lg px-3 py-2 flex-1 xl:flex-2"
-                    />
-                </div>
                 <div className="flex flex-2 flex-col sm:flex-row gap-2">
-
                     {/* Subjects */}
                     <div className="p-2 rounded-lg border flex-5">
                         <div className="flex gap-2 flex-wrap">
-                            {(["math", "phys", "chem"] as Subj[]).map((subj) => (
+                            {(["math", "chem"] as Subj[]).map((subj) => (
                                 <button
                                     key={subj}
                                     onClick={() => toggleSubject(subj)}
