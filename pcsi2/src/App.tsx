@@ -69,11 +69,11 @@ function App() {
         );
     }
 
-    function clearFilters() {
-        setSubjectFilter([]);
-        setTypeFilter([]);
-        setSearch("");
-    }
+    // function clearFilters() {
+    //     setSubjectFilter([]);
+    //     setTypeFilter([]);
+    //     setSearch("");
+    // }
 
     // 🧠 Filtering logic
     const filteredData = data.filter((doc) => {
