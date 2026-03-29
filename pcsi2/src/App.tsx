@@ -146,7 +146,7 @@ function App() {
                 />
             </div>
             <div className="flex flex-col gap-2 mb-6 lg:flex-row">
-                <div className="flex flex-2 flex-col sm:flex-row gap-2">
+                <div className="flex flex-1 flex-col sm:flex-row gap-2">
                     {/* Subjects */}
                     <div className="p-2 rounded-lg border flex-5">
                         <div className="flex gap-2 flex-wrap">
@@ -167,7 +167,7 @@ function App() {
                     </div>
                 </div>
                 
-                <div className="flex flex-4 flex-col sm:flex-row gap-2">   
+                <div className="flex flex-1 flex-col sm:flex-row gap-2">   
                     {/* Types */}
                     <div className="p-2 rounded-lg border flex-4 gap-2">
                         <div className="flex gap-2 flex-wrap">
@@ -185,16 +185,6 @@ function App() {
                                 </button>
                             ))}
                         </div>
-                    </div>
-
-                    {/* Clear button */}
-                    <div className="flex-1">
-                        <button
-                            onClick={clearFilters}
-                            className="bg-black text-sm text-red-500 hover:text-red-700 underline h-full w-full"
-                        >
-                            Supprimer
-                        </button>
                     </div>
                 </div>
             </div>
