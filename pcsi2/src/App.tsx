@@ -244,7 +244,7 @@ function App() {
             {/* No results */}
             {filteredData.length === 0 && (
                 <p className="mt-4 text-gray-500">
-                    No documents match your filters.
+                    Aucun document trouvé
                 </p>
             )}
         </div>
