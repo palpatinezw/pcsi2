@@ -22,6 +22,8 @@ function App() {
     const [data, setData] = useState<ColleDoc[]>([]);
     const [imptData, setImptData] = useState<ColleDoc[]>([]);
 
+    const [isLoading, setIsLoading] = useState<Boolean>(true)
+
     // 🔍 Filters
     const [subjectFilter, setSubjectFilter] = useState<Subj[]>([]);
     const [typeFilter, setTypeFilter] = useState<DocType[]>([]);
@@ -34,7 +36,8 @@ function App() {
             .then((res) => {
                 return res.body as ColleDoc[]
             }).then((res) => {
-                console.log(res)
+                console.log("RAW", res)
+                setIsLoading(false)
                 setData(res)
             })
         ;
@@ -91,7 +94,7 @@ function App() {
 
     return (
         <div className="m-auto max-w-7xl">
-            <h1 className="text-2xl font-semibold mb-6">Documents</h1>
+            {/* <h1 className="text-2xl font-semibold mb-6">Documents PCSI 2</h1> */}
 
             {/* IMPORTANT */}
             {imptData.length > 0 && <div className="overflow-x-auto rounded-2xl shadow-sm border border-red-900 border-5 mb-5">
@@ -233,9 +236,15 @@ function App() {
             {/* No results */}
             {filteredData.length === 0 && (
                 <p className="mt-4 text-gray-500">
-                    Aucun document trouvé
+                    {isLoading ? "Chargement des documents..." : "Aucun document trouvé"}
                 </p>
             )}
+
+            <footer className="w-full bg-neutral-primary-soft rounded-base shadow-xs">
+                <div className="w-full mx-auto max-w-screen-xl p-4 text-right">
+                    <span className="text-sm text-body">Site PCSI 2 non-officiel. CD Web 2026. </span>
+                </div>
+            </footer>
         </div>
     );
 }
